@@ -75,176 +75,192 @@ const Booking = () => {
     };
 
     return (
-        <div className="min-h-screen bg-premium-black pt-48 pb-24 relative overflow-hidden">
+        <div className="min-h-screen bg-premium-black pt-28 md:pt-48 pb-16 md:pb-32 relative overflow-hidden">
             {/* Decorative Background Text */}
-            <div className="decorative-text top-[5%] -right-[5%]">RESERVE</div>
-            <div className="decorative-text top-[50%] -left-[10%] rotate-90">MOMENTS</div>
+            <div className="decorative-text top-[10%] -right-[10%]">BOOK</div>
+            <div className="decorative-text bottom-[10%] -left-[5%]">NOW</div>
 
-            <div className="max-w-7xl mx-auto px-8 lg:px-12 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 relative z-10">
                 {/* Header */}
-                <div className="mb-32 text-center">
-                    <div className="flex flex-col items-center mb-8 group cursor-default">
-                        <div className="w-12 h-[1px] bg-premium-gold/30 mb-6 transition-all duration-700 group-hover:w-24 group-hover:bg-premium-gold" />
+                <div className="mb-16 md:mb-32 text-center">
+                    <div className="flex flex-col items-center mb-6 md:mb-8 group cursor-default">
+                        <div className="w-8 md:w-12 h-[1px] bg-premium-gold/30 mb-4 md:mb-6 transition-all duration-700 group-hover:w-16 md:group-hover:w-24 group-hover:bg-premium-gold" />
                         <div className="text-reveal-container">
-                            <span className={`block text-premium-cream/80 uppercase tracking-[1.2em] text-[9px] font-bold transition-all duration-1000 group-hover:text-premium-gold group-hover:tracking-[1.5em] ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
+                            <span className={`block text-premium-cream/80 uppercase tracking-[0.8em] md:tracking-[1.2em] text-[8px] md:text-[9px] font-bold transition-all duration-1000 group-hover:text-premium-gold group-hover:tracking-[1em] md:group-hover:tracking-[1.5em] ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
                                 Reservations
                             </span>
                         </div>
-                        <div className="w-12 h-[1px] bg-premium-gold/30 mt-6 transition-all duration-700 group-hover:w-24 group-hover:bg-premium-gold" />
+                        <div className="w-8 md:w-12 h-[1px] bg-premium-gold/30 mt-4 md:mt-6 transition-all duration-700 group-hover:w-16 md:group-hover:w-24 group-hover:bg-premium-gold" />
                     </div>
-                    <h1 className="text-6xl md:text-8xl font-display font-light text-white leading-[0.85]">
-                        Book Your <span className="italic text-premium-gold">Story</span>
+                    <h1 className="text-4xl md:text-6xl lg:text-8xl font-display font-light text-white leading-[1.1] md:leading-[0.85]">
+                        Secure Your <span className="italic text-premium-gold">Date</span>
                     </h1>
                 </div>
 
-                <div className="grid lg:grid-cols-12 gap-32 items-start">
-                    {/* Info Side */}
-                    <div className="lg:col-span-4 space-y-24">
-                        <div className="space-y-10">
-                            <h2 className="text-5xl font-display italic text-premium-gold">Let's Connect</h2>
-                            <p className="text-premium-cream/60 font-light leading-relaxed text-lg">
-                                Your story is unique, and it deserves to be told with care. Fill out the form, and let's start planning how to preserve your most precious moments.
-                            </p>
-                        </div>
-
-                        <div className="grid gap-8 relative">
-                            <div className="absolute -left-8 top-0 bottom-0 w-[1px] bg-gradient-to-b from-premium-gold/40 via-premium-gold/10 to-transparent" />
-
-                            <div className="p-8 border border-white/5 bg-premium-gray/10 backdrop-blur-sm space-y-3 group hover:border-premium-gold/20 transition-all duration-700">
-                                <span className="text-premium-gold uppercase tracking-[0.3em] text-[10px] font-bold block opacity-50">Email</span>
-                                <p className="text-xl font-display text-premium-cream group-hover:text-premium-gold transition-colors duration-500">hello@photoshopy.com</p>
-                            </div>
-
-                            <div className="p-8 border border-white/5 bg-premium-gray/10 backdrop-blur-sm space-y-3 group hover:border-premium-gold/20 transition-all duration-700">
-                                <span className="text-premium-gold uppercase tracking-[0.3em] text-[10px] font-bold block opacity-50">Phone</span>
-                                <p className="text-xl font-display text-premium-cream group-hover:text-premium-gold transition-colors duration-500">+91 1234567890</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Form Side */}
-                    <div className="lg:col-span-8 relative">
-                        <div className="absolute -top-12 -left-12 w-32 h-32 border-t border-l border-premium-gold/10 -z-10" />
-                        <div className="absolute -bottom-12 -right-12 w-32 h-32 border-b border-r border-premium-gold/10 -z-10" />
-
-                        <form onSubmit={handleSubmit} className="space-y-16 p-12 md:p-20 border border-white/5 bg-premium-gray/20 backdrop-blur-md shadow-2xl relative overflow-hidden group">
-                            <div className="absolute inset-0 bg-gradient-to-br from-premium-gold/[0.02] to-transparent -z-10" />
-
+                <div className="grid lg:grid-cols-12 gap-8 md:gap-16">
+                    {/* Booking Form */}
+                    <div className="lg:col-span-8">
+                        <form onSubmit={handleSubmit} className="space-y-8 md:space-y-12 bg-white/[0.02] p-6 md:p-12 border border-white/5">
                             {status.message && (
-                                <div className={`p-6 text-[10px] tracking-[0.3em] uppercase border transition-all duration-500 ${status.type === 'success' ? 'text-green-500 border-green-500/20 bg-green-500/5' : 'text-red-500 border-red-500/20 bg-red-500/5'}`}>
+                                <div className={`p-4 text-[10px] tracking-[0.3em] uppercase border transition-all duration-500 ${status.type === 'success' ? 'text-green-500 border-green-500/20 bg-green-500/5' : 'text-red-500 border-red-500/20 bg-red-500/5'}`}>
                                     {status.message}
                                 </div>
                             )}
-
-                            <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
-                                {/* Name */}
-                                <div className="relative group/input">
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        required
-                                        className="peer w-full bg-transparent border-b border-white/10 py-4 focus:border-premium-gold outline-none transition-all duration-700 text-premium-cream font-light text-lg placeholder:text-transparent"
-                                        placeholder="Name"
-                                    />
-                                    <label className="absolute left-0 top-4 text-[10px] uppercase tracking-[0.3em] text-premium-gold/40 font-bold transition-all duration-500 pointer-events-none peer-focus:-top-4 peer-focus:text-premium-gold peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-premium-gold">
-                                        Full Name
-                                    </label>
-                                </div>
-
-                                {/* Email */}
-                                <div className="relative group/input">
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        required
-                                        className="peer w-full bg-transparent border-b border-white/10 py-4 focus:border-premium-gold outline-none transition-all duration-700 text-premium-cream font-light text-lg placeholder:text-transparent"
-                                        placeholder="Email"
-                                    />
-                                    <label className="absolute left-0 top-4 text-[10px] uppercase tracking-[0.3em] text-premium-gold/40 font-bold transition-all duration-500 pointer-events-none peer-focus:-top-4 peer-focus:text-premium-gold peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-premium-gold">
-                                        Email Address
-                                    </label>
-                                </div>
-
-                                {/* Phone */}
-                                <div className="relative group/input">
-                                    <input
-                                        type="tel"
-                                        name="phone"
-                                        value={formData.phone}
-                                        onChange={handleChange}
-                                        required
-                                        className="peer w-full bg-transparent border-b border-white/10 py-4 focus:border-premium-gold outline-none transition-all duration-700 text-premium-cream font-light text-lg placeholder:text-transparent"
-                                        placeholder="Phone"
-                                    />
-                                    <label className="absolute left-0 top-4 text-[10px] uppercase tracking-[0.3em] text-premium-gold/40 font-bold transition-all duration-500 pointer-events-none peer-focus:-top-4 peer-focus:text-premium-gold peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-premium-gold">
-                                        Phone Number
-                                    </label>
-                                </div>
-
-                                {/* Custom Select */}
-                                <div className="relative" ref={selectRef}>
-                                    <label className="absolute -top-4 left-0 text-[10px] uppercase tracking-[0.3em] text-premium-gold/40 font-bold">
-                                        Event Type
-                                    </label>
-                                    <div
-                                        onClick={() => setIsSelectOpen(!isSelectOpen)}
-                                        className={`w-full border-b border-white/10 py-4 cursor-pointer flex justify-between items-center transition-all duration-700 ${isSelectOpen ? 'border-premium-gold' : ''}`}
-                                    >
-                                        <span className="text-premium-cream font-light text-lg">
-                                            {eventTypes.find(t => t.value === formData.eventType)?.label}
-                                        </span>
-                                        <svg
-                                            className={`w-4 h-4 text-premium-gold/40 transition-transform duration-500 ${isSelectOpen ? 'rotate-180' : ''}`}
-                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
-                                        >
-                                            <path d="m6 9 6 6 6-6" />
-                                        </svg>
+                            {/* Personal Details */}
+                            <div className="space-y-6 md:space-y-8">
+                                <h3 className="text-xl md:text-2xl font-display italic text-premium-gold border-b border-white/10 pb-4">01. Personal Details</h3>
+                                <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+                                    <div className="group">
+                                        <label className="block text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-2 md:mb-3 ml-1">Full Name</label>
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            value={formData.name}
+                                            onChange={handleChange}
+                                            className="w-full bg-transparent border-b border-white/20 py-2 md:py-4 text-premium-cream focus:border-premium-gold outline-none transition-all duration-500 font-light text-base md:text-lg placeholder:text-white/10"
+                                            placeholder="Your Name"
+                                            required
+                                        />
                                     </div>
+                                    <div className="group">
+                                        <label className="block text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-2 md:mb-3 ml-1">Email Address</label>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            className="w-full bg-transparent border-b border-white/20 py-2 md:py-4 text-premium-cream focus:border-premium-gold outline-none transition-all duration-500 font-light text-base md:text-lg placeholder:text-white/10"
+                                            placeholder="your@email.com"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="group">
+                                        <label className="block text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-2 md:mb-3 ml-1">Phone Number</label>
+                                        <input
+                                            type="tel"
+                                            name="phone"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            className="w-full bg-transparent border-b border-white/20 py-2 md:py-4 text-premium-cream focus:border-premium-gold outline-none transition-all duration-500 font-light text-base md:text-lg placeholder:text-white/10"
+                                            placeholder="+91 0000000000"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="group">
+                                        <label className="block text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-2 md:mb-3 ml-1">Event Date</label>
+                                        <input
+                                            type="date"
+                                            name="date"
+                                            value={formData.date}
+                                            onChange={handleChange}
+                                            className="w-full bg-transparent border-b border-white/20 py-2 md:py-4 text-premium-cream focus:border-premium-gold outline-none transition-all duration-500 font-light text-base md:text-lg placeholder:text-white/10 [color-scheme:dark]"
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                            </div>
 
-                                    {/* Dropdown Options */}
-                                    <div className={`absolute top-full left-0 right-0 mt-2 bg-premium-gray border border-white/10 z-50 transition-all duration-500 origin-top ${isSelectOpen ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0 pointer-events-none'}`}>
-                                        {eventTypes.map((type) => (
-                                            <div
-                                                key={type.value}
-                                                onClick={() => handleSelectChange(type.value)}
-                                                className={`px-6 py-4 text-sm uppercase tracking-[0.2em] cursor-pointer transition-all duration-300 hover:bg-premium-gold hover:text-premium-black ${formData.eventType === type.value ? 'text-premium-gold' : 'text-premium-cream/60'}`}
+                            {/* Event Details */}
+                            <div className="space-y-6 md:space-y-8">
+                                <h3 className="text-xl md:text-2xl font-display italic text-premium-gold border-b border-white/10 pb-4">02. Event Details</h3>
+                                <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+                                    <div className="group relative" ref={selectRef}>
+                                        <label className="block text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-2 md:mb-3 ml-1">Event Type</label>
+                                        <div className="relative">
+                                            <button
+                                                type="button"
+                                                onClick={() => setIsSelectOpen(!isSelectOpen)}
+                                                className="w-full bg-transparent border-b border-white/20 py-2 md:py-4 text-left text-premium-cream focus:border-premium-gold outline-none transition-all duration-500 font-light text-base md:text-lg flex justify-between items-center"
                                             >
-                                                {type.label}
-                                            </div>
-                                        ))}
+                                                {eventTypes.find(t => t.value === formData.eventType)?.label || formData.eventType}
+                                                <span className={`transform transition-transform duration-300 ${isSelectOpen ? 'rotate-180' : ''}`}>▼</span>
+                                            </button>
+                                            {isSelectOpen && (
+                                                <div className="absolute top-full left-0 w-full bg-premium-black border border-white/10 z-50 mt-1 max-h-48 overflow-y-auto">
+                                                    {eventTypes.map((type) => (
+                                                        <div
+                                                            key={type.value}
+                                                            onClick={() => handleSelectChange(type.value)}
+                                                            className="px-4 py-3 hover:bg-white/5 cursor-pointer text-premium-cream font-light text-sm md:text-base border-b border-white/5 last:border-none"
+                                                        >
+                                                            {type.label}
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
                                     </div>
+                                    <div className="group">
+                                        <label className="block text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-2 md:mb-3 ml-1">Venue / Location</label>
+                                        <input
+                                            type="text"
+                                            name="venue"
+                                            value={formData.venue}
+                                            onChange={handleChange}
+                                            className="w-full bg-transparent border-b border-white/20 py-2 md:py-4 text-premium-cream focus:border-premium-gold outline-none transition-all duration-500 font-light text-base md:text-lg placeholder:text-white/10"
+                                            placeholder="City, Country"
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                                <div className="group">
+                                    <label className="block text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-2 md:mb-3 ml-1">Additional Details</label>
+                                    <textarea
+                                        name="details"
+                                        value={formData.details}
+                                        onChange={handleChange}
+                                        rows="4"
+                                        className="w-full bg-transparent border-b border-white/20 py-2 md:py-4 text-premium-cream focus:border-premium-gold outline-none transition-all duration-500 font-light text-base md:text-lg placeholder:text-white/10 resize-none"
+                                        placeholder="Tell us more about your plans..."
+                                    ></textarea>
                                 </div>
                             </div>
 
-                            {/* Message */}
-                            <div className="relative group/input">
-                                <textarea
-                                    name="message"
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                    rows="4"
-                                    className="peer w-full bg-transparent border-b border-white/10 py-4 focus:border-premium-gold outline-none transition-all duration-700 text-premium-cream font-light text-lg resize-none placeholder:text-transparent"
-                                    placeholder="Message"
-                                />
-                                <label className="absolute left-0 top-4 text-[10px] uppercase tracking-[0.3em] text-premium-gold/40 font-bold transition-all duration-500 pointer-events-none peer-focus:-top-4 peer-focus:text-premium-gold peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-premium-gold">
-                                    Tell us about your vision...
-                                </label>
-                            </div>
-
-                            <div className="pt-8">
+                            <div className="pt-8 md:pt-12 flex justify-end">
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="premium-btn w-full text-[10px] py-6"
+                                    className="premium-btn w-full md:w-auto"
                                 >
                                     {isSubmitting ? 'Sending Request...' : 'Request Booking'}
                                 </button>
                             </div>
                         </form>
+                    </div>
+
+                    {/* Sidebar Info */}
+                    <div className="lg:col-span-4 space-y-8 md:space-y-12">
+                        <div className="bg-premium-gold/[0.02] p-6 md:p-10 border border-white/5">
+                            <h3 className="text-xl md:text-2xl font-display italic text-premium-gold mb-6 md:mb-8">Booking Process</h3>
+                            <ul className="space-y-6 md:space-y-8">
+                                <li className="relative pl-8 md:pl-10">
+                                    <span className="absolute top-0 left-0 text-premium-gold/40 font-display text-lg md:text-xl">01</span>
+                                    <h4 className="text-premium-white text-base md:text-lg font-display mb-1 md:mb-2">Inquiry</h4>
+                                    <p className="text-premium-cream/40 text-xs md:text-sm font-light">Fill out the form with your event details.</p>
+                                </li>
+                                <li className="relative pl-8 md:pl-10">
+                                    <span className="absolute top-0 left-0 text-premium-gold/40 font-display text-lg md:text-xl">02</span>
+                                    <h4 className="text-premium-white text-base md:text-lg font-display mb-1 md:mb-2">Consultation</h4>
+                                    <p className="text-premium-cream/40 text-xs md:text-sm font-light">We'll schedule a call to discuss your vision.</p>
+                                </li>
+                                <li className="relative pl-8 md:pl-10">
+                                    <span className="absolute top-0 left-0 text-premium-gold/40 font-display text-lg md:text-xl">03</span>
+                                    <h4 className="text-premium-white text-base md:text-lg font-display mb-1 md:mb-2">Proposal</h4>
+                                    <p className="text-premium-cream/40 text-xs md:text-sm font-light">Receive a custom package tailored to you.</p>
+                                </li>
+                                <li className="relative pl-8 md:pl-10">
+                                    <span className="absolute top-0 left-0 text-premium-gold/40 font-display text-lg md:text-xl">04</span>
+                                    <h4 className="text-premium-white text-base md:text-lg font-display mb-1 md:mb-2">Confirmation</h4>
+                                    <p className="text-premium-cream/40 text-xs md:text-sm font-light">Sign the contract and secure your date.</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="p-6 md:p-10 border border-white/5 bg-premium-gray/10 text-center">
+                            <p className="text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Direct Contact</p>
+                            <p className="text-xl md:text-2xl font-display text-white mb-2">+91 123 456 7890</p>
+                            <p className="text-premium-cream/60 font-light text-sm md:text-base">Mon - Sat, 10am - 7pm IST</p>
+                        </div>
                     </div>
                 </div>
             </div>

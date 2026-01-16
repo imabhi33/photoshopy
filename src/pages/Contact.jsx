@@ -43,141 +43,127 @@ const Contact = () => {
     };
 
     return (
-        <div className="min-h-screen bg-premium-black pt-48 pb-24 relative overflow-hidden">
+        <div className="min-h-screen bg-premium-black pt-28 md:pt-48 pb-16 md:pb-24 relative overflow-hidden">
             {/* Decorative Background Text */}
-            <div className="decorative-text top-[5%] -left-[5%]">CONNECT</div>
-            <div className="decorative-text top-[50%] -right-[10%] rotate-90">HELLO</div>
+            <div className="decorative-text top-[10%] -left-[5%]">CONNECT</div>
+            <div className="decorative-text top-[60%] -right-[10%] rotate-90">SAY HELLO</div>
 
-            <div className="max-w-7xl mx-auto px-8 lg:px-12 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 relative z-10">
                 {/* Header */}
-                <div className="mb-32 text-center">
-                    <div className="text-reveal-container mb-6">
-                        <span className={`block text-premium-gold uppercase tracking-[0.8em] text-[10px] font-bold transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
-                            Contact
-                        </span>
+                <div className="mb-16 md:mb-32 text-center">
+                    <div className="flex flex-col items-center mb-6 md:mb-8 group cursor-default">
+                        <div className="w-8 md:w-12 h-[1px] bg-premium-gold/30 mb-4 md:mb-6 transition-all duration-700 group-hover:w-16 md:group-hover:w-24 group-hover:bg-premium-gold" />
+                        <div className="text-reveal-container">
+                            <span className={`block text-premium-cream/80 uppercase tracking-[0.8em] md:tracking-[1.2em] text-[8px] md:text-[9px] font-bold transition-all duration-1000 group-hover:text-premium-gold group-hover:tracking-[1em] md:group-hover:tracking-[1.5em] ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
+                                Get in Touch
+                            </span>
+                        </div>
+                        <div className="w-8 md:w-12 h-[1px] bg-premium-gold/30 mt-4 md:mt-6 transition-all duration-700 group-hover:w-16 md:group-hover:w-24 group-hover:bg-premium-gold" />
                     </div>
-                    <h1 className="section-title-premium text-white">
-                        Start a <span className="italic text-premium-gold">Conversation</span>
+                    <h1 className="text-4xl md:text-6xl lg:text-8xl font-display font-light text-white leading-[1.1] md:leading-[0.85]">
+                        Start Your <span className="italic text-premium-gold">Story</span>
                     </h1>
-                    <div className="gold-line mt-12 opacity-20" />
                 </div>
 
-                <div className="grid lg:grid-cols-12 gap-32">
-                    {/* Info Side */}
-                    <div className="lg:col-span-5 space-y-24">
-                        <div className="space-y-10">
-                            <h2 className="text-5xl font-display italic text-premium-gold">Get in Touch</h2>
-                            <p className="text-premium-cream/60 font-light leading-relaxed text-xl">
-                                Whether you have a question about our services, want to discuss a project, or just want to say hello, we'd love to hear from you.
+                <div className="grid lg:grid-cols-2 gap-12 md:gap-24">
+                    {/* Contact Info */}
+                    <div className="space-y-12 md:space-y-16">
+                        <div className="space-y-6 md:space-y-8">
+                            <h2 className="text-3xl md:text-4xl font-display italic text-premium-white">Let's Create Together</h2>
+                            <p className="text-premium-cream/60 font-light leading-relaxed text-base md:text-lg">
+                                We'd look forward to hearing from you. Whether you have a specific vision in mind or need guidance, we're here to help you create something timeless.
                             </p>
                         </div>
 
-                        <div className="space-y-16 relative">
-                            <div className="absolute -left-12 top-0 bottom-0 w-[1px] bg-gradient-to-b from-premium-gold/40 via-premium-gold/10 to-transparent" />
-
-                            <div className="flex items-start gap-10 group">
-                                <span className="text-premium-gold/10 text-6xl font-display group-hover:text-premium-gold/30 transition-all duration-700 group-hover:-translate-y-2">01</span>
-                                <div className="space-y-3">
-                                    <span className="text-premium-gold uppercase tracking-[0.3em] text-[10px] font-bold">Email</span>
-                                    <p className="text-2xl font-display text-premium-cream group-hover:text-premium-gold transition-colors duration-500">hello@photoshopy.com</p>
-                                </div>
+                        <div className="space-y-8 md:space-y-10">
+                            <div className="space-y-2 md:space-y-3 group">
+                                <span className="text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-bold block mb-1 md:mb-2">Email Us</span>
+                                <a href="mailto:hello@photoshopy.com" className="text-2xl md:text-3xl font-display text-white group-hover:text-premium-gold transition-colors duration-500 break-all">hello@photoshopy.com</a>
                             </div>
-
-                            <div className="flex items-start gap-10 group">
-                                <span className="text-premium-gold/10 text-6xl font-display group-hover:text-premium-gold/30 transition-all duration-700 group-hover:-translate-y-2">02</span>
-                                <div className="space-y-3">
-                                    <span className="text-premium-gold uppercase tracking-[0.3em] text-[10px] font-bold">Phone</span>
-                                    <p className="text-2xl font-display text-premium-cream group-hover:text-premium-gold transition-colors duration-500">+91 1234567890</p>
-                                </div>
+                            <div className="space-y-2 md:space-y-3 group">
+                                <span className="text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-bold block mb-1 md:mb-2">Call Us</span>
+                                <a href="tel:+911234567890" className="text-2xl md:text-3xl font-display text-white group-hover:text-premium-gold transition-colors duration-500">+91 123 456 7890</a>
                             </div>
+                            <div className="space-y-2 md:space-y-3">
+                                <span className="text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-bold block mb-1 md:mb-2">Visit Us</span>
+                                <p className="text-xl md:text-2xl font-display text-white leading-relaxed">
+                                    123 Creative Studio,<br />
+                                    Design District, New Delhi - 110001
+                                </p>
+                            </div>
+                        </div>
 
-                            <div className="flex items-start gap-10 group">
-                                <span className="text-premium-gold/10 text-6xl font-display group-hover:text-premium-gold/30 transition-all duration-700 group-hover:-translate-y-2">03</span>
-                                <div className="space-y-3">
-                                    <span className="text-premium-gold uppercase tracking-[0.3em] text-[10px] font-bold">Studio</span>
-                                    <p className="text-2xl font-display text-premium-cream group-hover:text-premium-gold transition-colors duration-500">Bhubaneswar, Odisha, India</p>
-                                </div>
+                        <div className="pt-4 md:pt-8">
+                            <h3 className="text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-bold mb-4 md:mb-6">Follow Our Journey</h3>
+                            <div className="flex gap-6 md:gap-8">
+                                {['Instagram', 'Facebook', 'Vimeo'].map((social, index) => (
+                                    <a key={index} href="#" className="text-premium-cream/40 hover:text-premium-gold transition-colors duration-500 text-xs md:text-sm">{social}</a>
+                                ))}
                             </div>
                         </div>
                     </div>
 
-                    {/* Form Side */}
-                    <div className="lg:col-span-7 relative">
-                        <div className="absolute -top-12 -right-12 w-32 h-32 border-t border-r border-premium-gold/20 -z-10" />
-                        <div className="absolute -bottom-12 -left-12 w-32 h-32 border-b border-l border-premium-gold/20 -z-10" />
-
-                        <form onSubmit={handleSubmit} className="space-y-12 p-16 border border-white/10 bg-premium-gray/30 backdrop-blur-sm shadow-2xl relative overflow-hidden group">
-                            <div className="absolute inset-0 bg-premium-gold/[0.01] -z-10 group-hover:bg-premium-gold/[0.02] transition-all duration-700" />
-
-                            {status.message && (
-                                <div className={`p-6 text-sm tracking-[0.3em] uppercase border ${status.type === 'success' ? 'text-green-500 border-green-500/20 bg-green-500/5' : 'text-red-500 border-red-500/20 bg-red-500/5'}`}>
-                                    {status.message}
-                                </div>
-                            )}
-
-                            <div className="space-y-4">
-                                <label className="text-[10px] uppercase tracking-[0.3em] text-premium-gold/50 font-bold">Full Name</label>
+                    {/* Contact Form */}
+                    <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8 bg-white/[0.02] p-6 md:p-12 border border-white/5">
+                        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+                            <div className="group">
+                                <label className="block text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-2 md:mb-3 ml-1">Your Name</label>
                                 <input
-                                    type="text"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    required
-                                    className="w-full bg-transparent border-b border-white/10 py-4 focus:border-premium-gold outline-none transition-all duration-700 text-premium-cream font-light text-lg placeholder:text-white/5"
+                                    className="w-full bg-transparent border-b border-white/20 py-2 md:py-4 text-premium-cream focus:border-premium-gold outline-none transition-all duration-500 font-light text-base md:text-lg placeholder:text-white/10"
                                     placeholder="Your Name"
+                                    required
                                 />
                             </div>
-
-                            <div className="grid md:grid-cols-2 gap-12">
-                                <div className="space-y-4">
-                                    <label className="text-[10px] uppercase tracking-[0.3em] text-premium-gold/50 font-bold">Email</label>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full bg-transparent border-b border-white/10 py-4 focus:border-premium-gold outline-none transition-all duration-700 text-premium-cream font-light text-lg placeholder:text-white/5"
-                                        placeholder="Email Address"
-                                    />
-                                </div>
-                                <div className="space-y-4">
-                                    <label className="text-[10px] uppercase tracking-[0.3em] text-premium-gold/50 font-bold">Phone</label>
-                                    <input
-                                        type="tel"
-                                        name="phone"
-                                        value={formData.phone}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full bg-transparent border-b border-white/10 py-4 focus:border-premium-gold outline-none transition-all duration-700 text-premium-cream font-light text-lg placeholder:text-white/5"
-                                        placeholder="Phone Number"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="space-y-4">
-                                <label className="text-[10px] uppercase tracking-[0.3em] text-premium-gold/50 font-bold">Message</label>
-                                <textarea
-                                    name="message"
-                                    value={formData.message}
+                            <div className="group">
+                                <label className="block text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-2 md:mb-3 ml-1">Email Address</label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={formData.email}
                                     onChange={handleChange}
-                                    rows="6"
-                                    className="w-full bg-transparent border-b border-white/10 py-4 focus:border-premium-gold outline-none transition-all duration-700 text-premium-cream font-light text-lg resize-none placeholder:text-white/5"
-                                    placeholder="How can we help you?"
+                                    className="w-full bg-transparent border-b border-white/20 py-2 md:py-4 text-premium-cream focus:border-premium-gold outline-none transition-all duration-500 font-light text-base md:text-lg placeholder:text-white/10"
+                                    placeholder="your@email.com"
+                                    required
                                 />
                             </div>
+                        </div>
 
-                            <div className="pt-12">
-                                <button
-                                    type="submit"
-                                    disabled={isSubmitting}
-                                    className="premium-btn w-full text-sm py-6"
-                                >
-                                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                        <div className="group">
+                            <label className="block text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-2 md:mb-3 ml-1">Subject</label>
+                            <input
+                                type="text"
+                                name="subject"
+                                value={formData.subject}
+                                onChange={handleChange}
+                                className="w-full bg-transparent border-b border-white/20 py-2 md:py-4 text-premium-cream focus:border-premium-gold outline-none transition-all duration-500 font-light text-base md:text-lg placeholder:text-white/10"
+                                placeholder="Wedding Inquiry / Collaboration"
+                                required
+                            />
+                        </div>
+
+                        <div className="group">
+                            <label className="block text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-2 md:mb-3 ml-1">Message</label>
+                            <textarea
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                rows="4"
+                                className="w-full bg-transparent border-b border-white/20 py-2 md:py-4 text-premium-cream focus:border-premium-gold outline-none transition-all duration-500 font-light text-base md:text-lg placeholder:text-white/10 resize-none"
+                                placeholder="Tell us about your story..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div className="pt-4 md:pt-8 text-center md:text-left">
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="premium-btn w-full md:w-auto"
+                            >
+                                {isSubmitting ? 'Sending...' : 'Send Message'}
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
