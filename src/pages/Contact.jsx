@@ -5,7 +5,7 @@ const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        phone: '',
+        subject: '',
         message: ''
     });
     const [status, setStatus] = useState({ type: '', message: '' });
@@ -31,7 +31,7 @@ const Contact = () => {
         try {
             const response = await submitContact(formData);
             setStatus({ type: 'success', message: response.message });
-            setFormData({ name: '', email: '', phone: '', message: '' });
+            setFormData({ name: '', email: '', subject: '', message: '' });
         } catch (error) {
             setStatus({
                 type: 'error',
@@ -109,6 +109,10 @@ const Contact = () => {
                             <div className="group">
                                 <label className="block text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-2 md:mb-3 ml-1">Your Name</label>
                                 <input
+                                    type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
                                     className="w-full bg-transparent border-b border-white/20 py-2 md:py-4 text-premium-cream focus:border-premium-gold outline-none transition-all duration-500 font-light text-base md:text-lg placeholder:text-white/10"
                                     placeholder="Your Name"
                                     required

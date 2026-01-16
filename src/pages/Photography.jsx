@@ -13,25 +13,25 @@ const Photography = () => {
             title: "Wedding Stories",
             image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=1200",
             description: "Timeless documentation of your union.",
-            link: "/booking"
+            link: "/gallery/wedding-stories"
         },
         {
             title: "Cinematic Films",
             image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=1200",
             description: "Moving memories that feel like cinema.",
-            link: "/booking"
+            link: "/gallery/cinematic-films"
         },
         {
             title: "Pre-Wedding",
             image: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=1200",
             description: "Intimate portraits in beautiful locales.",
-            link: "/booking"
+            link: "/gallery/pre-wedding"
         },
         {
             title: "Editorial",
             image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=1200",
             description: "Fashion-forward portraits and lifestyle.",
-            link: "/booking"
+            link: "/gallery/editorial"
         }
     ];
 

@@ -150,8 +150,8 @@ const Booking = () => {
                                         <label className="block text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-2 md:mb-3 ml-1">Event Date</label>
                                         <input
                                             type="date"
-                                            name="date"
-                                            value={formData.date}
+                                            name="eventDate"
+                                            value={formData.eventDate}
                                             onChange={handleChange}
                                             className="w-full bg-transparent border-b border-white/20 py-2 md:py-4 text-premium-cream focus:border-premium-gold outline-none transition-all duration-500 font-light text-base md:text-lg placeholder:text-white/10 [color-scheme:dark]"
                                             required
@@ -194,8 +194,8 @@ const Booking = () => {
                                         <label className="block text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-2 md:mb-3 ml-1">Venue / Location</label>
                                         <input
                                             type="text"
-                                            name="venue"
-                                            value={formData.venue}
+                                            name="location"
+                                            value={formData.location}
                                             onChange={handleChange}
                                             className="w-full bg-transparent border-b border-white/20 py-2 md:py-4 text-premium-cream focus:border-premium-gold outline-none transition-all duration-500 font-light text-base md:text-lg placeholder:text-white/10"
                                             placeholder="City, Country"
@@ -206,8 +206,8 @@ const Booking = () => {
                                 <div className="group">
                                     <label className="block text-premium-gold text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-2 md:mb-3 ml-1">Additional Details</label>
                                     <textarea
-                                        name="details"
-                                        value={formData.details}
+                                        name="message"
+                                        value={formData.message}
                                         onChange={handleChange}
                                         rows="4"
                                         className="w-full bg-transparent border-b border-white/20 py-2 md:py-4 text-premium-cream focus:border-premium-gold outline-none transition-all duration-500 font-light text-base md:text-lg placeholder:text-white/10 resize-none"

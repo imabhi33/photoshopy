@@ -29,4 +29,56 @@ export const submitBooking = async (bookingData) => {
     }
 };
 
+export const getBookings = async () => {
+    try {
+        const response = await api.get('/bookings');
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || { message: 'Failed to fetch bookings' };
+    }
+};
+
+export const updateBookingStatus = async (id, status) => {
+    try {
+        const response = await api.patch(`/bookings/${id}`, { status });
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || { message: 'Failed to update booking status' };
+    }
+};
+
+// Gallery API
+export const uploadPhoto = async (formData) => {
+    try {
+        const response = await api.post('/gallery/upload', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
+        });
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || { message: 'Failed to upload photo' };
+    }
+};
+
+export const getPhotos = async (category) => {
+    try {
+        const response = await api.get('/gallery', {
+            params: { category }
+        });
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || { message: 'Failed to fetch photos' };
+    }
+};
+
+export const deletePhoto = async (id) => {
+    try {
+        const response = await api.delete(`/gallery/${id}`);
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || { message: 'Failed to delete photo' };
+    }
+};
+
 export default api;

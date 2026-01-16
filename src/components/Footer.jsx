@@ -1,10 +1,47 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useAdmin } from '../context/AdminContext';
+import PinModal from './PinModal';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
+    const [clickCount, setClickCount] = useState(0);
+    const [showPinModal, setShowPinModal] = useState(false);
+    const { isAdmin } = useAdmin();
+    const navigate = useNavigate();
+
+    // Reset click count after 2 seconds of inactivity
+    useEffect(() => {
+        if (clickCount === 0) return;
+
+        const timer = setTimeout(() => {
+            setClickCount(0);
+        }, 2000);
+
+        return () => clearTimeout(timer);
+    }, [clickCount]);
+
+    const handleSecretClick = () => {
+        if (isAdmin) {
+            // If already admin, go straight to dashboard
+            navigate('/admin-dashboard');
+            return;
+        }
+
+        setClickCount(prev => {
+            const newCount = prev + 1;
+            if (newCount === 5) {
+                setShowPinModal(true);
+                return 0;
+            }
+            return newCount;
+        });
+    };
 
     return (
         <footer className="bg-premium-black border-t border-white/5 pt-16 md:pt-24 pb-8 md:pb-12">
+            <PinModal isOpen={showPinModal} onClose={() => setShowPinModal(false)} />
+
             <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 mb-16 md:mb-24">
                     {/* Brand */}
@@ -42,6 +79,16 @@ const Footer = () => {
                                     </Link>
                                 </li>
                             ))}
+                            {isAdmin && (
+                                <li>
+                                    <Link
+                                        to="/admin-dashboard"
+                                        className="text-premium-gold hover:text-white transition-colors duration-500 font-bold text-sm uppercase tracking-widest"
+                                    >
+                                        Admin Dashboard
+                                    </Link>
+                                </li>
+                            )}
                         </ul>
                     </div>
 
@@ -63,7 +110,10 @@ const Footer = () => {
 
                 {/* Bottom Bar */}
                 <div className="pt-8 md:pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-8">
-                    <p className="text-premium-cream/20 text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold text-center md:text-left w-full md:w-auto">
+                    <p
+                        className="text-premium-cream/20 text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold text-center md:text-left w-full md:w-auto select-none active:text-white/40 transition-colors"
+                        onClick={handleSecretClick}
+                    >
                         &copy; {currentYear} Photoshopy. All rights reserved.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 md:gap-12 w-full md:w-auto">
